@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Palatino';
+    src: url('/fonts/palatino/PalatinoSans-Regular.ttf') format('truetype'),
+         url('/fonts/palatino/PalatinoSans-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Palatino';
+    src: url('/fonts/palatino/PalatinoSans-Bold.ttf') format('truetype'),
+         url('/fonts/palatino/PalatinoSans-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+body {
+
+  font-family: Palatino;
+}
+code {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 85%;
+}

@@ -1,0 +1,32 @@
+baseURL = "/"
+languageCode = "fa-ir"
+title = "از صِفر"
+theme = "hugo-xmin"
+footnotereturnlinkcontents = "↩"
+disqusShortname = "az-sefr"
+
+[[menu.main]]
+    name = "وبلاگ"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "درباره من"
+    url = "/about/"
+    weight = 2
+
+[[menu.main]]
+    name = "پراکنده"
+    url = "/random/"
+    weight = 3
+
+[[menu.main]]
+    name = "اشتراک"
+    url = "/index.xml"
+
+[Params]
+description = "در تلاش برای رهایی از این گودال"
+twitter = "https://twitter.com/ibtkm"
+homepage = "http://py4.ir/"
+author = "پویا"
+

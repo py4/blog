@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "blog"
 languageCode = "fa-ir"
 title = "از صِفر"
 theme = "hugo-xmin"
@@ -7,18 +7,23 @@ disqusShortname = "az-sefr"
 
 [[menu.main]]
     name = "وبلاگ"
-    url = "/"
+    url = "/post"
     weight = 1
 
 [[menu.main]]
-    name = "درباره من"
-    url = "/about/"
+    name = "روزنوشت"
+    url = "/rooznevesht"
     weight = 2
 
 [[menu.main]]
     name = "پراکنده"
     url = "/random/"
     weight = 3
+
+[[menu.main]]
+    name = "درباره من"
+    url = "/about/"
+    weight = 4
 
 [[menu.main]]
     name = "اشتراک"

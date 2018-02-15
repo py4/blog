@@ -1,6 +1,6 @@
 baseURL = "blog"
 languageCode = "fa-ir"
-title = "از صِفر"
+title = "اپیوئید"
 theme = "hugo-xmin"
 footnotereturnlinkcontents = "↩"
 disqusShortname = "az-sefr"
@@ -9,6 +9,11 @@ disqusShortname = "az-sefr"
     name = "وبلاگ"
     url = "/post"
     weight = 1
+
+[[menu.main]]
+    name = "پروژه‌ی ایکس"
+    url = "/x-project"
+    weight=1.5
 
 [[menu.main]]
     name = "روزنوشت"
@@ -30,7 +35,7 @@ disqusShortname = "az-sefr"
     url = "/index.xml"
 
 [Params]
-description = "در تلاش برای رهایی از این گودال"
+description = "در تلاش برای رهایی از این گرداب"
 twitter = "https://twitter.com/ibtkm"
 homepage = "http://py4.ir/"
 author = "پویا"

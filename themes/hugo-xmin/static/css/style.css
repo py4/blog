@@ -1,3 +1,6 @@
+div.highlight {
+    direction: ltr;
+}
 body {
   max-width: 800px;
   margin: auto;

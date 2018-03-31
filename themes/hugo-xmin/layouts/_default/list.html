@@ -23,6 +23,17 @@
     </li>
 </ul>
 
+<h1> اشعار </h1>
+<ul>
+  {{ range (where .Data.Pages "Section" "==" "poem") }}
+  <li>
+    <span class="date"> {{ .Params.persianDate }} </span>
+    <a href="{{ .URL }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+
 <h1> روزنوشت‌ها </h1>
 <ul>
   {{ range (where .Data.Pages "Section" "==" "rooznevesht") }}

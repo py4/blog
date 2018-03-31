@@ -16,6 +16,11 @@ disqusShortname = "az-sefr"
     weight=1.5
 
 [[menu.main]]
+    name = "اشعار"
+    url = "/poem"
+    weight=2
+
+[[menu.main]]
     name = "روزنوشت"
     url = "/rooznevesht"
     weight = 2

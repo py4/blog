@@ -6,6 +6,11 @@ footnotereturnlinkcontents = "↩"
 disqusShortname = "az-sefr"
 
 [[menu.main]]
+    name = "خانه"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
     name = "وبلاگ"
     url = "/post"
     weight = 1

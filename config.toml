@@ -41,6 +41,11 @@ disqusShortname = "az-sefr"
     weight = 4
 
 [[menu.main]]
+    name = "صفحه‌ی شخصی"
+    url = "http://py4.ir"
+    weight = 5
+
+[[menu.main]]
     name = "اشتراک"
     url = "/index.xml"
 

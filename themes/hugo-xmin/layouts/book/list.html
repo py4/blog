@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<h1> معرفی کتاب‌هایی که دوست دارم </h1>
+<ul>
+  {{ range (where .Data.Pages "Section" "==" "book") }}
+  <li>
+    <span class="date"> {{ .Params.persianDate }} </span>
+    <a href="{{ .URL }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+
+{{ partial "footer.html" . }}

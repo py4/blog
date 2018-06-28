@@ -26,6 +26,11 @@ disqusShortname = "az-sefr"
     weight=1.5
 
 [[menu.main]]
+    name = "مهاجرت به کانادا"
+    url = "/canada"
+    weight=2
+
+[[menu.main]]
     name = "اشعار"
     url = "/poem"
     weight=2

@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<h1> نوشته‌ها </h1>
+<ul>
+  {{ range (where .Data.Pages "Section" "==" "canada") }}
+  <li>
+    <span class="date"> {{ .Params.persianDate }} </span>
+    <a href="{{ .URL }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+
+{{ partial "footer.html" . }}

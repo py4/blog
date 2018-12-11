@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+  <head>
+    <meta charset="utf-8">
+    <title>پیام‌رسان peer-to-peer | اپیوئید</title>
+    <link rel="stylesheet" href="/blog/css/style.css" />
+    <link rel="stylesheet" href="/blog/css/fonts.css" />
+    <meta property="og:title" content="پیام‌رسان peer-to-peer" />
+    <meta property="og:description" content="چالش اسفند: پیام‌رسان peer-to-peer این اولین چالش از پروژه‌ی ایکس من هستش. من قصد دارم تو این ماه، یک کلون از نرم‌افزار Telegram تولید کنم منتها با این تفاوت که به صورت peer-to-peer 1 پیاده‌سازی شده هستش. از اونجایی که خیلی وقت هست دوست دارم با زبان برنامه‌نویسی Erlang آشنا شم، می‌خوام هسته‌ی این نرم‌افزار رو با Erlang طراحی کنم. 2 این نرم‌افزار قراره یک رابط گرافیکی هم داشته باشه که الان نمی‌دونم می‌خوام با چی طراحی‌ش کنم ولی تلاشم اینه که دقیقا شکل تلگرام باشه از لحاظ ظاهری." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="پیام‌رسان peer-to-peer">
+    <meta name="twitter:description" content="چالش اسفند: پیام‌رسان peer-to-peer این اولین چالش از پروژه‌ی ایکس من هستش. من قصد دارم تو این ماه، یک کلون از نرم‌افزار Telegram تولید کنم منتها با این تفاوت که به صورت peer-to-peer 1 پیاده‌سازی شده هستش. از اونجایی که خیلی وقت هست دوست دارم با زبان برنامه‌نویسی Erlang آشنا شم، می‌خوام هسته‌ی این نرم‌افزار رو با Erlang طراحی کنم. 2 این نرم‌افزار قراره یک رابط گرافیکی هم داشته باشه که الان نمی‌دونم می‌خوام با چی طراحی‌ش کنم ولی تلاشم اینه که دقیقا شکل تلگرام باشه از لحاظ ظاهری.">
+
+    
+  </head>
+
+  <body>
+    <div class="top-bar">
+        <p class="title"> <b> اپیوئید </b> </p>
+        <p class="description"> در تلاش برای رهایی از این گرداب </p>
+    </div>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/blog/">خانه</a></li>
+      
+      <li><a href="/blog/post">وبلاگ</a></li>
+      
+      <li><a href="/blog/x-project">پروژه‌ی ایکس</a></li>
+      
+      <li><a href="/blog/book">کتاب‌ها</a></li>
+      
+      <li><a href="/blog/poem">اشعار</a></li>
+      
+      <li><a href="/blog/rooznevesht">روزنوشت</a></li>
+      
+      <li><a href="/blog/canada">مهاجرت به کانادا</a></li>
+      
+      <li><a href="/blog/random/">پراکنده</a></li>
+      
+      <li><a href="/blog/about/">درباره من</a></li>
+      
+      <li><a href="http://py4.ir">صفحه‌ی شخصی</a></li>
+      
+      <li><a href="/blog/index.xml">اشتراک</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+
+<h1 id="چالش-اسفند-پیام-رسان-peer-to-peer">چالش اسفند: پیام‌رسان peer-to-peer</h1>
+
+<p>این اولین چالش از <a href="/x-project">پروژه‌ی ایکس</a> من هستش. من قصد دارم تو این ماه، یک کلون از نرم‌افزار Telegram تولید کنم منتها با این تفاوت که به صورت peer-to-peer
+<sup class="footnote-ref" id="fnref:peer-to-peer-pee"><a href="#fn:peer-to-peer-pee">1</a></sup>
+پیاده‌سازی شده هستش. از اونجایی که خیلی وقت هست دوست دارم با زبان برنامه‌نویسی Erlang آشنا شم، می‌خوام هسته‌ی این نرم‌افزار رو با Erlang طراحی کنم.
+<sup class="footnote-ref" id="fnref:Erlang-Erlang-co"><a href="#fn:Erlang-Erlang-co">2</a></sup>
+این نرم‌افزار قراره یک رابط گرافیکی هم داشته باشه که الان نمی‌دونم می‌خوام با چی طراحی‌ش کنم ولی تلاشم اینه که دقیقا شکل تلگرام باشه از لحاظ ظاهری.
+<sup class="footnote-ref" id="fnref:Electron-https-e"><a href="#fn:Electron-https-e">3</a></sup></p>
+
+<p>این نکته رو بگم که من تا حالا هیچ نرم‌افزار peer-to-peerی رو طراحی نکردم و نیاز دارم که راجع بهشون مطالعه کنم. همچنین من تقریبا هیچ چیزی از Erlang نمیدونم و تجربه‌ی نوشتن نرم‌افزار با یک زبان برنامه‌نویسی functional هم ندارم!</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:peer-to-peer-pee"> یک شبکه‌ی peer-to-peer به این شکل هستش که کلاینت‌ها بدون وجود یک سرور مرکزی، با همدیگه به صورت مستقیم کار می‌کنند و تبادل اطلاعات می‌کنند. شبکه‌ی تورنت یک نمونه از یک شبکه‌ی peer-to-peer هستش. p2p بودن یک پیام‌رسان این مزیت رو داره که پیام‌ها دیگه روی سرور ذخیره نمی‌شن و یه جورایی می‌تونه باعث افزایش حریم خصوصی کاربران بشه. (اینجا هدف من این نیست که بحث کنم برای یک پیام‌رسان مدل p2p بهتر هستش یا client/server. صرفا یک مزیت‌ش رو گفتم)  <a class="footnote-return" href="#fnref:peer-to-peer-pee">↩</a></li>
+<li id="fn:Erlang-Erlang-co"> دلیل اصلی انتخاب Erlang برای من این بوده که خیلی دوست دارم باهاش آشنا بشم. ولی جدای از این قضیه، تا جاییکه تو اینترنت خوندم، Erlang برای طراحی نرم‌افزارهایی که نیاز به concurrency و failure handling دارن خیلی مناسب هست. در حد خوندن بوده و هیچ ایده‌ای راجع به جزئیاتش ندارم!  <a class="footnote-return" href="#fnref:Erlang-Erlang-co">↩</a></li>
+<li id="fn:Electron-https-e"> خیلی دوست دارم که رابط گرافیکی رو با <a href="https://electronjs.org">Electron</a> طراحی کنم. هم cross-platform هستش و هم اینکه قبلا با Qt اپلیکیشن نوشتم و دوست دارم یک چهارچوب جدید رو تجربه کنم.  <a class="footnote-return" href="#fnref:Electron-https-e">↩</a></li>
+</ol>
+</div>
+
+
+<h1> گزارش‌ها </h1>
+<ul>
+  
+  <li>
+    <span class="date">  </span>
+    <a href="blog/p2p/day_1/">روز اول - کمی ارلنگ</a>
+  </li>
+  
+  <li>
+    <span class="date">  </span>
+    <a href="blog/p2p/day_2/">روز دوم - یک سیستم چت خیلی خیلی ساده</a>
+  </li>
+  
+  <li>
+    <span class="date">  </span>
+    <a href="blog/p2p/day_3/">روز سوم : افزایش سرعت کد زدن در ارلنگ</a>
+  </li>
+  
+  <li>
+    <span class="date">  </span>
+    <a href="blog/p2p/day_4/">روز چهارم - بیشتر مطالعه</a>
+  </li>
+  
+</ul>
+
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

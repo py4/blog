@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+  <head>
+    <meta charset="utf-8">
+    <title>روز سوم : افزایش سرعت کد زدن در ارلنگ | اپیوئید</title>
+    <link rel="stylesheet" href="/blog/css/style.css" />
+    <link rel="stylesheet" href="/blog/css/fonts.css" />
+    <meta property="og:title" content="روز سوم : افزایش سرعت کد زدن در ارلنگ" />
+    <meta property="og:description" content="امروز سومین روز من در چالش اسفند ماه بود. در پروژه‌ی ایکسی که برای خودم تعریف کردم، من هر ماه یک چلنجی رو برای خودم انتخاب می‌کنم.
+خب امروز تازه ساعت ۱۲ شب کار کردن روی پروژه رو شروع کردم و الان که دارم این پست رو می‌نویسم ساعت ۵ صبح هستش! در ابتدا نشستم یه مقدار از این کتاب Learn You Some Erlang رو خوندم. خیلی بامزه و خوب توضیح داده و از روی یک کتاب Haskell اسکی رفته سبک نوشتن‌ش رو." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="روز سوم : افزایش سرعت کد زدن در ارلنگ">
+    <meta name="twitter:description" content="امروز سومین روز من در چالش اسفند ماه بود. در پروژه‌ی ایکسی که برای خودم تعریف کردم، من هر ماه یک چلنجی رو برای خودم انتخاب می‌کنم.
+خب امروز تازه ساعت ۱۲ شب کار کردن روی پروژه رو شروع کردم و الان که دارم این پست رو می‌نویسم ساعت ۵ صبح هستش! در ابتدا نشستم یه مقدار از این کتاب Learn You Some Erlang رو خوندم. خیلی بامزه و خوب توضیح داده و از روی یک کتاب Haskell اسکی رفته سبک نوشتن‌ش رو.">
+
+    
+  </head>
+
+  <body>
+    <div class="top-bar">
+        <p class="title"> <b> اپیوئید </b> </p>
+        <p class="description"> در تلاش برای رهایی از این گرداب </p>
+    </div>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/blog/">خانه</a></li>
+      
+      <li><a href="/blog/post">وبلاگ</a></li>
+      
+      <li><a href="/blog/x-project">پروژه‌ی ایکس</a></li>
+      
+      <li><a href="/blog/book">کتاب‌ها</a></li>
+      
+      <li><a href="/blog/poem">اشعار</a></li>
+      
+      <li><a href="/blog/rooznevesht">روزنوشت</a></li>
+      
+      <li><a href="/blog/canada">مهاجرت به کانادا</a></li>
+      
+      <li><a href="/blog/random/">پراکنده</a></li>
+      
+      <li><a href="/blog/about/">درباره من</a></li>
+      
+      <li><a href="http://py4.ir">صفحه‌ی شخصی</a></li>
+      
+      <li><a href="/blog/index.xml">اشتراک</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">روز سوم : افزایش سرعت کد زدن در ارلنگ</span></h1>
+
+<h2 class="date">  </h2>
+</div>
+
+<main>
+<p>امروز سومین روز من در <a href="/blog/p2p">چالش اسفند ماه</a> بود. در <a href="/blog/x-project">پروژه‌ی ایکس</a>ی که برای خودم تعریف کردم، من هر ماه یک چلنجی رو برای خودم انتخاب می‌کنم.</p>
+
+<p>خب امروز تازه ساعت ۱۲ شب کار کردن روی پروژه رو شروع کردم و الان که دارم این پست رو می‌نویسم ساعت ۵ صبح هستش!
+در ابتدا نشستم یه مقدار از این کتاب <a href="http://learnyousomeerlang.com">Learn You Some Erlang</a> رو خوندم. خیلی بامزه و خوب توضیح داده و از روی <a href="http://learnyouahaskell.com/">یک کتاب Haskell</a> اسکی رفته سبک نوشتن‌ش رو. چون از روی اون کتاب قبلی‌ه یه سری چیزا خونده بودم، خیلی مطالبش تکراری بود و تقریبا می‌شه گفت صرفا وقتم رو تلف کردم :دی البته یه سری چیزای ریز مثلا استفاده از <code>record</code>ها رو یاد گرفتم، کانسپت <a href="https://en.wikipedia.org/wiki/Tail_call">Tail Recursion</a> <sup class="footnote-ref" id="fnref:performance-recu"><a href="#fn:performance-recu">1</a></sup> برام یادآوری شد و اینکه با List Comprehensions که خیلی چیز جالبی بود آشنا شدم. یه سینتکسی هست که می‌شه باهاش مثلا یه مجموعه رو ساخت به این شکل :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-erlang" data-lang="erlang">[X<span style="color:#f92672">+</span>Y || X <span style="color:#f92672">&lt;</span>-<span style="color:#960050;background-color:#1e0010"> [1,2, 3], Y &lt;- [4, 5, 6], X </span>rem <span style="color:#ae81ff">2</span> <span style="color:#f92672">=:=</span> <span style="color:#ae81ff">1</span>, Y <span style="color:#f92672">rem</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">=:=</span> <span style="color:#ae81ff">0</span> ].</code></pre></div></p>
+
+<p>این چیزی که نوشتم میاد Xهای فرد رو با Yهای زوج جمع می‌کنه!</p>
+
+<p>بعد از اینکه یکی دو ساعت وقتم رو با خوندن کتاب‌ه تلف کردم (به خاطر مطالب تقریبا تکراری)، نشستم یه سری تمیزکاری بکنم روی کدی که دیروز زده بود. اولا اینکه می‌خواستم کد کلاینت و سرور رو از هم جدا کنم که ماژولار تر بشه. ثانیا می‌خواستم اطلاعات کلاینت‌ها رو به صورت <code>record</code> نگه دارم تو سرور. ثالثا می‌خواستم یه سری failure اینا هندل کنم که دیگه به این آخری نرسیدم.</p>
+
+<p>الان کد آخری که بهش رسیدم این هستش:</p>
+
+<p>این کد سرور هستش:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-erlang" data-lang="erlang">-record(server_store,
+        {clients <span style="color:#f92672">=</span> []}).
+
+-record(client,
+        {pid, username}).
+
+<span style="color:#a6e22e">login</span>(PID, Username, Store) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    C</span>lients <span style="color:#f92672">=</span> Store#server_store.clients,
+    io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;Looking for </span><span style="color:#e6db74">~p</span><span style="color:#e6db74"> in </span><span style="color:#e6db74">~p</span><span style="color:#e6db74">&#34;</span>, [PID, Clients]),
+    <span style="color:#66d9ef">case</span> lists:<span style="color:#a6e22e">keymember</span>(PID, #client.pid, Clients) <span style="color:#66d9ef">of</span>
+        true -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            PID ! {</span>error, <span style="color:#e6db74">&#34;Already logged in&#34;</span>},
+            Store;
+        false -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>case lists:<span style="color:#a6e22e">keymember</span>(Username, #client.username, Clients) <span style="color:#66d9ef">of</span>
+                true -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    PID ! {</span>error, <span style="color:#e6db74">&#34;Username already exists&#34;</span>},
+                    Store;
+                false -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    PID ! {</span>logged_in},
+                    Clients <span style="color:#f92672">=</span> Store#server_store.clients,
+                    NewClients <span style="color:#f92672">=</span> [#client{pid <span style="color:#f92672">=</span> PID, username <span style="color:#f92672">=</span> Username} | Clients],
+                    Store#server_store{clients <span style="color:#f92672">=</span> NewClients}
+            <span style="color:#66d9ef">end</span>
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">logout</span>(PID, Store) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    C</span>lients <span style="color:#f92672">=</span> Store#server_store.clients,
+    <span style="color:#66d9ef">case</span> lists:<span style="color:#a6e22e">keyfind</span>(PID, #client.pid, Clients) <span style="color:#66d9ef">of</span>
+        false -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            PID ! {</span>error, <span style="color:#e6db74">&#34;You are not logged in yet!&#34;</span>},
+            Store;
+        Client -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            C</span>lient#client.pid <span style="color:#f92672">!</span> {logged_out},
+            Store#server_store{clients <span style="color:#f92672">=</span> lists:<span style="color:#a6e22e">delete</span>(Client, Clients)}
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">ensure_login</span>(PID, Store) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    C</span>lients <span style="color:#f92672">=</span> Store#server_store.clients,
+    <span style="color:#66d9ef">case</span> lists:<span style="color:#a6e22e">keyfind</span>(PID, #client.pid, Clients) <span style="color:#66d9ef">of</span>
+        false -<span style="color:#960050;background-color:#1e0010">&gt; </span>false;
+        Client -<span style="color:#960050;background-color:#1e0010">&gt; C</span>lient#client.username
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">send_message</span>(From_PID, To_Username, Message, Store) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    C</span>lients <span style="color:#f92672">=</span> Store#server_store.clients,
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">ensure_login</span>(From_PID, Store) <span style="color:#66d9ef">of</span>
+        false -<span style="color:#960050;background-color:#1e0010">&gt; F</span>rom_PID <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;You are not logged in!&#34;</span>};
+        From_Username -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>case lists:<span style="color:#a6e22e">keyfind</span>(To_Username, #client.username, Clients) <span style="color:#66d9ef">of</span>
+                false -<span style="color:#960050;background-color:#1e0010">&gt; F</span>rom_PID <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;Target user not found!&#34;</span>};
+                ToClient -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    T</span>oClient#client.pid <span style="color:#f92672">!</span> {message_received, From_Username, Message},
+                    From_PID <span style="color:#f92672">!</span> {message_sent}
+            <span style="color:#66d9ef">end</span>
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">start_server</span>() -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>register(server, <span style="color:#a6e22e">self</span>()),
+    <span style="color:#a6e22e">server</span>(#server_store{clients <span style="color:#f92672">=</span> []}).
+
+
+<span style="color:#a6e22e">server</span>(Store) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>receive
+        {login, PID, Username} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;Shit!</span><span style="color:#e6db74">~n</span><span style="color:#e6db74">&#34;</span>, []),
+            <span style="color:#a6e22e">server</span>(<span style="color:#a6e22e">login</span>(PID, Username, Store));
+        {logout, PID} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>server(<span style="color:#a6e22e">logout</span>(PID, Store));
+        {send_message, PID, To, Message} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>send_message(PID, To, Message, Store),
+            <span style="color:#a6e22e">server</span>(Store)
+    <span style="color:#66d9ef">end</span>.</code></pre></div>
+
+<p>و این هم کد کلاینت هستش :</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-erlang" data-lang="erlang">-module(client).
+-export([start_client<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>]).
+-export([start_receiver<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>]).
+
+-record(shell,
+        {login, logout, send_message}).
+
+<span style="color:#a6e22e">start_receiver</span>(Shell_PID) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>receive
+        Message -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>case Message <span style="color:#66d9ef">of</span>
+                {message_received, From, ChatMessage} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">~p</span><span style="color:#e6db74"> Sent you: </span><span style="color:#e6db74">~p~n</span><span style="color:#e6db74">&#34;</span>, [From, ChatMessage]);
+                {message_sent} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>ok;
+                {logged_in} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>ok;
+                {logged_out} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>ok;
+                {error, ErrorMessage} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    S</span>hell_PID <span style="color:#f92672">!</span> ErrorMessage
+            <span style="color:#66d9ef">end</span>,
+            io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;[Client] received: </span><span style="color:#e6db74">~p~n</span><span style="color:#e6db74">&#34;</span>, [Message]),
+            <span style="color:#a6e22e">start_receiver</span>(Shell_PID)
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">get_shell</span>(ServerInfo, Receiver_PID) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    #</span>shell{
+       login <span style="color:#f92672">=</span> <span style="color:#66d9ef">fun</span>(Username) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                S</span>erverInfo <span style="color:#f92672">!</span> {login, Receiver_PID, Username} <span style="color:#66d9ef">end</span>,
+
+       logout <span style="color:#f92672">=</span> <span style="color:#66d9ef">fun</span>() -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                S</span>erverInfo <span style="color:#f92672">!</span> {logout, Receiver_PID} <span style="color:#66d9ef">end</span>,
+
+       send_message <span style="color:#f92672">=</span> <span style="color:#66d9ef">fun</span>(Username, Message) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                S</span>erverInfo <span style="color:#f92672">!</span> {send_message, Receiver_PID, Username, Message} <span style="color:#66d9ef">end</span>
+      }.
+
+<span style="color:#a6e22e">start_client</span>(Server_Registered_Name, Server_Node_Address) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    S</span>erverInfo <span style="color:#f92672">=</span> {Server_Registered_Name, Server_Node_Address},
+    Receiver_PID <span style="color:#f92672">=</span> spawn(client, start_receiver, [<span style="color:#a6e22e">self</span>()]),
+    <span style="color:#a6e22e">get_shell</span>(ServerInfo, Receiver_PID).</code></pre></div>
+تغییرات اساسی که کرده یکی استفاده از recordها بود که داستان‌های خودش رو داشت. یکی هم اینکه یه خلاقیتی زدم این وسط که شاید راه‌های بهتری هم داشته باشه. دفعه‌ی قبلی اطلاعات سرور در کلاینت hardcode شده بود. می‌خواستم به صورت ورودی بگیرمش داخل تابع <code>start_client</code>. مشکلی که وجود داشت این بود که برای اینکه داخل توابعی نظیر <code>login</code> اینا بهش دسترسی پیدا کنیم، باید به عنوان آرگومان می‌گرفتیمش و این باعث می‌شد داخل shell همیشه مجبور باشیم اطلاعات سرور رو هی بدیم. یه ایده‌ی خیلی خفنی که زدم :))) (حتی ممکنه ایده‌ی احمقانه‌ای باشه چرا که الان ساعت ۵ صبحه :دی) این بود که تابع ‍<code>start_client</code> یه رکورد به نام <code>shell</code> برگردونه که داخلش لیستی از توابع <code>login</code> و &hellip; تعریف شده. حالا چطوری بدون آرگومان صداشون کنیم؟ ایده این بود که این توابع رو به صورت <code>Anonmyous</code> تعریف کنیم و از بیرون (ینی داخل تابع <code>start_client</code>) اطلاعات سرور رو بهش bind کنیم! که خب خودم بسی حال کردم با این حرکت :دی</p>
+
+<p>مشکلاتی که خوردم به خاطر اینکه بعضا ارورهای Erlang برام نامفهوم بود طول می‌کشید تا حل‌شون کنم و متاسفانه ریسورس‌های رفع مشکلات Erlang تو اینترنت خیلی کم ه و بیشتر از اینکه Stackoverflow باشه تو mailing listشون ه:</p>
+
+<p>۱. حواسم نبود که وقتی یه تابعی رو می‌خوای <code>spawn</code> کنی باید قبلش <code>export</code> شده باشه!</p>
+
+<p>۲. حواسم نبود که Erlang یک زبان Dynamically Typed هستش و ماکسیمم کاری که برای آدم می‌کنه Pattern Matching هستش. بعد این کجا من رو اذیت کرد؟ وقتی که کد رو عوض کردم که از رکورد <code>Store</code> استفاده کنه، یه سری جاها رو فراموش کردم که <code>Store</code> پاس بدم و به جاش یه Tuple دیگه که تعداد المان‌هاش هم متفاوت بود پاس می‌دادم.
+<sup class="footnote-ref" id="fnref:Erlang-Tuple-run"><a href="#fn:Erlang-Tuple-run">2</a></sup></p>
+
+<p>اینم از کارهای امروز. کارهایی که برای فردا بکنم یکی اینه که یه نگاه بزنم تو اینترنت ببینم Naming Conventionها تو ارلنگ چطوری هستش. یکی اینکه بشینم OTP رو از روی این کتاب‌ه بخونم ببینم چه فازیه و اینکه یه ذره هم راجع به پروتکل‌های P2P بخونم (اینا تسک‌هایی بود که امروز می‌خواستم انجامشون بدم که نرسیدم)</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:performance-recu"> در زبان‌های برنامه‌نویسی تابعی، به دلیل اینکه همه چیز با فراخونی تابع اتفاق میفته و خیلی چیزها به صورت بازگشتی هستند، باید به این موضوع توجه کرد چرا که performance رو خیلی تحت تاثیر قرار می‌گیره. یک تابع recursive عادی همینطوری stack trace رو پر می‌کنه اما یک تابع tail recursive مثلا یه حلقه‌ی loop عمل می‌کنه و یه حافظه‌ی ثابت استفاده میکنه. باید حواستون باشه که توابع بازگشتی‌تون رو تا جاییکه می‌شه tail recursive بنویسید  <a class="footnote-return" href="#fnref:performance-recu">↩</a></li>
+<li id="fn:Erlang-Tuple-run">در واقع Erlang هر Tupleی رو از من قبول می‌کرد و به صورت run-time دچار مشکل می‌شد. اولش یه مقدار به تناقض رسیدم که مگه Erlang شعارش این نبود که ما کارمون reliability و availability و این‌ها هستش؟ پس چرا اینقدر راحت run-time ارور خورد؟ داخل همین کتاب Learn you some Erlang توضیح داده که Erlang به جای اینکه بیاد روی Static Type Checking مانور بده (که باعث می‌شه safety بره بالاتر)، روی failure recovery مانور داده. اصن فرض Erlang اینه که برنامه‌های مرتب کرش می‌کنیم و به جای اینکه بیایم جلوی کرش کردن‌شون رو بگیریم، بیایم جلوی منتشر شدن خطا رو بگیریم (از طریق پایین آوردن پراسس و بالا آوردن یه پراسس جدید). که خب کلا جالب بود فلسفه‌ش.  <a class="footnote-return" href="#fnref:Erlang-Tuple-run">↩</a></li>
+</ol>
+</div>
+
+</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "az-sefr" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

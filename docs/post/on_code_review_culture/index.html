@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+  <head>
+    <meta charset="utf-8">
+    <title>درباره‌ی فرهنگ Code Review | اپیوئید</title>
+    <link rel="stylesheet" href="/blog/css/style.css" />
+    <link rel="stylesheet" href="/blog/css/fonts.css" />
+    <meta property="og:title" content="درباره‌ی فرهنگ Code Review" />
+    <meta property="og:description" content="در تیم‌های مختلف فنی‌ی که کار کردم، کد ریویو 1 به شیوه‌های متفاوت و فرهنگ‌های مختلفی انجام می‌شده. چندین ماه پیش این فکر تو ذهنم بود که یک مقدار بیشتر راجع به کد ریویو مطالعه کنم و ببینم در دنیا به چه شکلی انجام می‌شه و practiceهای خوبش چیان که حاصلش شد این مطلبی که دارم می‌نویسم که بیشتر خلاصه‌ی یک سری منابع هست که در انتها بهشون لینک دادم." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="درباره‌ی فرهنگ Code Review">
+    <meta name="twitter:description" content="در تیم‌های مختلف فنی‌ی که کار کردم، کد ریویو 1 به شیوه‌های متفاوت و فرهنگ‌های مختلفی انجام می‌شده. چندین ماه پیش این فکر تو ذهنم بود که یک مقدار بیشتر راجع به کد ریویو مطالعه کنم و ببینم در دنیا به چه شکلی انجام می‌شه و practiceهای خوبش چیان که حاصلش شد این مطلبی که دارم می‌نویسم که بیشتر خلاصه‌ی یک سری منابع هست که در انتها بهشون لینک دادم.">
+
+    
+  </head>
+
+  <body>
+    <div class="top-bar">
+        <p class="title"> <b> اپیوئید </b> </p>
+        <p class="description"> در تلاش برای رهایی از این گرداب </p>
+    </div>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/blog/">خانه</a></li>
+      
+      <li><a href="/blog/post">وبلاگ</a></li>
+      
+      <li><a href="/blog/x-project">پروژه‌ی ایکس</a></li>
+      
+      <li><a href="/blog/book">کتاب‌ها</a></li>
+      
+      <li><a href="/blog/poem">اشعار</a></li>
+      
+      <li><a href="/blog/rooznevesht">روزنوشت</a></li>
+      
+      <li><a href="/blog/canada">مهاجرت به کانادا</a></li>
+      
+      <li><a href="/blog/random/">پراکنده</a></li>
+      
+      <li><a href="/blog/about/">درباره من</a></li>
+      
+      <li><a href="http://py4.ir">صفحه‌ی شخصی</a></li>
+      
+      <li><a href="/blog/index.xml">اشتراک</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">درباره‌ی فرهنگ Code Review</span></h1>
+
+<h2 class="date"> ۱۲ فروردین ۹۷ </h2>
+</div>
+
+<main>
+
+
+<p>در تیم‌های مختلف فنی‌ی که کار کردم، کد ریویو
+<sup class="footnote-ref" id="fnref:-"><a href="#fn:-">1</a></sup>
+به شیوه‌های متفاوت و فرهنگ‌های مختلفی انجام می‌شده. چندین ماه پیش این فکر تو ذهنم بود که یک مقدار بیشتر راجع به کد ریویو مطالعه کنم و ببینم در دنیا به چه شکلی انجام می‌شه و  practiceهای خوبش چیان که حاصلش شد این مطلبی که دارم می‌نویسم که بیشتر خلاصه‌ی یک سری منابع هست که در انتها بهشون لینک دادم.</p>
+
+<h2 id="code-review-چی-هست-و-به-چه-دردی-می-خوره">Code Review چی هست و به چه دردی می‌خوره؟</h2>
+
+<p>تو ذهن خیلی از ماها،‌ code review برای این هست که اگر باگی تو کدمون هست که متوجه‌ش نشدیم رو پیدا کنیم توسط code review. آیا واقعا هدف از این code review این هستش؟
+نه ! پیدا کردن باگ رو باید با QA و انواع مختلف روش‌های مختلف testing <sup class="footnote-ref" id="fnref:https-en-wikiped"><a href="#fn:https-en-wikiped">2</a></sup>
+حل کنید. البته کد ریویو به خودی خود باعث می‌شه که باگ‌ها کمتر بشن ولی هدفش این نیست. در فرهنگ کد ریویو مدرن، هدف اصلی چیز دیگه‌ای هستش. یک تیمی از مایکروسافت شروع به یه تحقیق کردن و از تیم‌ها و شرکت‌های مختلف مزایای کد ریویو رو می‌پرسیدن. طبق انتظار، اکثریت، &ldquo;پیدا کردن باگ&rdquo; رو به عنوان مزیت اصلی کد ریویو مطرح کرده بودن منتها بررسی‌هایی که روی code reviewهاشون انجام شد، چیز دیگه‌ای رو نشون می‌داد. مزایایی که در عمل تیم‌ها ازش بهره‌مند شدن و تو ذهنشون bold شده بود، <strong>انتقال دانش، افزایش آگاهی تیمی، و پیدا کردن راه حل‌های جایگزین/بهتر</strong> بود !
+<center>
+<img src="/img/code_review/image7.jpg" alt="" />
+</center>
+کد ریویو فرصتی هستش که آدم‌ها دانش‌ و طرز نگاه‌شون رو با هم به اشتراک بگذارن، <strong>از هم یاد بگیرن</strong> و <strong>با هم دیگه پیشرفت کنند</strong>. همچنین، کد ریویو باعث افزایش آگاهی تیمی می‌شه از این نظر که همه مقدار خوبی نسبت به codebase آپدیت می‌مونند و این کار رو در آینده خیلی راحت می‌کنه برای تغییرات. این مساله ارتباط مستقیم داره با bus factor
+<sup class="footnote-ref" id="fnref:-"><a href="#fn:-">3</a></sup>. علاوه بر این، باعث می‌شه که راه‌حل جدید یا بهتر برای یه مساله پیدا بشه. مثلا شاید یک نفر بتونه پیشنهاد بده که چطوری می‌شه یک چیزی رو ساده‌تر انجام داد که خب بهتره.</p>
+
+<p>نتیجه‌ی فرهنگ کد ریویوی خوب :</p>
+
+<ul>
+<li>کدهای بهتر</li>
+<li>توسعه‌دهنده‌های بهتر</li>
+<li>مالکیت تیمی کد: دیگه خبری از &ldquo;کد من&rdquo; و &ldquo;کد تو&rdquo; نیستش و همه چیز تبدیل به &ldquo;کد ما&rdquo; میشه.</li>
+<li>افزایش ضریب اتوبوسی</li>
+</ul>
+
+<h2 id="فرایند-code-review-به-چه-شکل-هستش">فرایند code review به چه شکل هستش؟</h2>
+
+<p>خود تیم می‌تونه قرارداد کنه فرایند کد reviewشون چطوری باشه ولی یه راه خوب‌ش (با فرض اینکه فقط یک نفر کد ها رو مرج می‌کنه) اینه که برای تغییرات‌تون یک merge request درست کنیم و رندوم به یک نفر assign کنیم، اون نفر کد رو بررسی کنه و نظراتش رو بگه و اگر بحثی هست انجام بشه، نویسنده‌ی کد تغییرات لازمه رو بده و در نهایت merge request به system owner اساین بشه و اون مرج کنه.</p>
+
+<h2 id="چه-چیزهایی-رو-review-کنیم">چه چیزهایی رو review کنیم؟</h2>
+
+<ul>
+<li>اصول SOLID</li>
+<li>نام‌‌گذاری‌ها</li>
+<li>پیچیدگی کد</li>
+<li>کاورج تست‌ها</li>
+<li>راه‌حل‌های جایگزین</li>
+<li>….</li>
+</ul>
+
+<p><strong>نکته درباره‌ی Code Style</strong>: خوبه که کدها یکپارچه و تمیز باشن و به شکل consistentی نوشته بشن نه اینکه هر تیکه‌ش یه استایل متفاوتی داشته باشه. جوری که انگار همیشه این تیم بوده که کد رو می‌نوشته و نه نفرات مختلف. بهتره روی یک حداقلی توافق بشه (مثلا single quote یا double quote) و در سایر موارد به استایل نویسنده احترام بذاریم. در رابطه با پایتون می‌شه از PEP8 <sup class="footnote-ref" id="fnref:https-www-python"><a href="#fn:https-www-python">4</a></sup> استفاده کرد.
+<br><br>
+تا جاییکه بتونیم، بهتره که یه سری چیزا رو automate کنیم:</p>
+
+<ul>
+<li>استفاده از Linterها</li>
+<li>ابزارهای اندازه‌گیری پیچیدگی و کیفیت کد و نگه‌داری‌پذیری : codeclimater و sonar</li>
+<li>استفاده از ابزارهای test coverage</li>
+</ul>
+
+<h2 id="مواردی-که-هنگام-review-کردن-خوبه-که-رعایت-کنیم">مواردی که هنگام review کردن خوبه که رعایت کنیم</h2>
+
+<p>مهم‌ترین نکته‌ای که تو review کردن کد باید حواسمون باشه اینه که ما <strong>همه انسان هستیم</strong> و هممون تا حدی دارای  <strong>Imposter Syndrome</strong>
+<sup class="footnote-ref" id="fnref:https-en-wikiped"><a href="#fn:https-en-wikiped">5</a></sup> هستیم. نتیجه‌ش این می‌شه که ناخودآگاه، وقتی ایرادی به کدی که زدیم گرفته می‌شه، اون رو به خودمون می‌گیریم و ناراحت می‌شیم یا گارد می‌گیریم. در این رابطه جلوتر صحبت می‌کنیم.
+<center>
+<img src="/img/code_review/image3.png" alt="" />
+</center>
+ولی نتیجتا به عنوان reviewer باید در نظر بگیریم اینه که در محیط نوشتاری، لحن و منظور به خوبی منتقل نمی‌شه و تحقیقات نشون داده<sup class="footnote-ref" id="fnref:https-www-fastco"><a href="#fn:https-www-fastco">6</a></sup> که یه negative bias در تعامل نوشتاری نسبت به تعامل چهره به چهره یا گفتاری وجود داره. پس باید قبل از هر چیزی این نکته رو در نظر بگیریم که چطوری به شکل مناسبی یه پیشنهادی رو مطرح کنیم به نویسنده‌ی کد.
+<br><br>
+نکات ریزی که خوبه که رعایت کنیم:</p>
+
+<ul>
+<li><strong>جملات پرسشی</strong> : به جای جملات دستوری، از جملات پرسشی استفاده کنیم. مثلا به جای اینکه بگیم &ldquo;اسم این خوب نیست. عوضش کن&rdquo; بهتره بگیم &ldquo;بهتر نیست/نظرت چیه/ اسمش این رو عوضش کنیم؟&rdquo;</li>
+</ul>
+
+<p><center>
+<img src="/img/code_review/image6.jpg" alt="" />
+</center>
+این پرسشی مطرح کردن، به جز اون بحث گارد گرفتن به یه چیز دیگه هم کمک می‌کنه. اینکه آدم‌های تازه‌واردتر به تیم، بتونند راحت‌تر به اعضای seniorتر فیدبک بدن. ممکنه خیلی از اعضای جدید سختشون باشه به یک senior بگن فلان کار رو بکن و این پرسشی مطرح کردن این کار رو راحت می‌کنه براشون.
+<br><br>
+<strong>نکته‌ی کنکوری</strong>: جمله‌ای نظیر &ldquo;چرا این کار رو نکردی؟&rdquo; با اینکه پرسشی هست ولی حامل یک قضاوت هست و بار منفی منتقل می‌کنه.</p>
+
+<ul>
+<li><p><strong>موارد subjective</strong>: نکته‌ی دوم اینکه سر مواردی که خیلی subjective هستند و سودی که دارند خیلی marginal هستش، سعی کنید بحث نکنید، اما اگر دیگه خیلی اصرار دارید که بگید، به صورت پیشنهاد مطرح کنید. ولی کلا چیزهایی که خیلی preferential هستش، سعی کنید همون نظر نویسنده‌ی کد باشه. همیشه این سوال رو از خودتون بپرسید که &ldquo;کیفیتش کافی نیست یا صرفا جوری نیست که من انجام میدادمش؟&rdquo; . خلاصه‌ش اینه که خیلی وسواس به خرج ندیم.</p></li>
+
+<li><p><strong>به جای جملات دستوری، از جملات پرسشی استفاده کنیم</strong></p></li>
+
+<li><p><strong>استفاده از کلام passive به جای &ldquo;تو&rdquo;</strong>: مثلا به جای اینکه بگیم &ldquo;فراموش کردی که فایل رو ببندی&rdquo; بهتره بگیم &ldquo;فایل اینجا بسته نشده&rdquo;</p></li>
+
+<li><p><strong>برچسب نزنیم</strong>: مثلا نگیم &ldquo;تازه‌کاری&rdquo; یا &ldquo;تجربه‌ت کمه&rdquo; یا &ldquo;حالا بعدا می‌فهمی&rdquo; , …. (واقعا تاثیرات بلندمدت بدی میذاره رو طرف به خصوص برای بچه‌های juniorتر)</p></li>
+
+<li><p><strong>مثبت باشیم و از هم تشکر کنیم</strong>
+<center>
+<img src="/img/code_review/image4.png" alt="" />
+</center></p></li>
+</ul>
+
+<h2 id="مواردی-که-به-عنوان-نویسنده-ی-کد-بهتره-رعایت-کنیم">مواردی که به عنوان نویسنده‌ی کد بهتره رعایت کنیم</h2>
+
+<ul>
+<li><p><strong>برنچ‌های کوچک</strong>: سعی کنید با برنچ‌های کوچیک برید جلو که هم برای author و هم برای reviewer راحت باشه بررسی‌ش نه اینکه یه برنچ با کلی تغییر گنده.</p></li>
+
+<li><p><strong>شما کدتون نیستید</strong>: به اون imposter syndrome خودآگاهی داشته باشید و بدونید که ایرادی اگر گرفته شده، به کد تیم هستش نه به شخص شما!</p></li>
+
+<li><p><strong>یاد دادن به بقیه</strong>: موقعی که merge request می‌زنید سعی کنید دلایل تغییراتتون رو به صورت مشروح بنویسید (و چیزی رو برای بقیه بدیهی فرض نکنید) یادتون باشه که یکی از مهم‌ترین اهداف این پروسه اینه که به هم یاد بدیم و از هم یاد بگیریم.
+<center>
+<img src="/img/code_review/image5.png" alt="" />
+</center></p></li>
+</ul>
+
+<h2 id="اختلاف-نظرها">اختلاف نظرها</h2>
+
+<p>یه سری نکته‌ی پراکنده:</p>
+
+<ul>
+<li><p>خیلی پیش میاد که نویسنده‌ی کد و reviewer راجع به یک تغییر اختلاف نظر داشته باشند. اولا اختلاف نظر داشتن به خودی خود <strong>اتفاق مثبتی هستش</strong>! چون باعث می‌شه هر دو طرف با شرط یک بحث سالم، از همدیگه طرز فکر و محتوا یاد بگیرن مستقل از نتیجه‌ی نهایی. پس کلا نگران این موضوع نباشید و به چشم یه فرصت برای ارتقای دانش و ارتقای توانایی بحث کردن بهش نگاه کنید.</p></li>
+
+<li><p>داخل بحث کردن، شیوه‌ی سقراطی<sup class="footnote-ref" id="fnref:https-en-wikiped"><a href="#fn:https-en-wikiped">7</a></sup> <sup class="footnote-ref" id="fnref:https-techblog-w"><a href="#fn:https-techblog-w">8</a></sup> خیلی کمک می‌کنه که بحث به صورت منطقی جلو بره. این هم خوبه در رابطه با روش سقراطی برای کد ریویو.</p></li>
+
+<li><p>همچنین باید حواسمون باشه که تمرکزمون این نباشه که ثابت کنیم من دارم درست می‌گم.</p></li>
+
+<li><p>ممکنه بعضا رخ بده که دو نفر سر یک چیز توافق پیدا نکنند. این اتفاق به خودی خود بد نیست چرا که این جور مسائل معمولا سر trade offها هستش و percieved value هر نفر از قضیه با نفر دیگه متفاوت هست و کاریش نمیشه کرد. اگر فکر می‌کنید مرج کردن‌ش باعث نمیشه که همون موقع مشکلی پیش بیاد، بهتره که نظر نویسنده‌ی کد رو اعمال کنیم. ولی اگر reviewer خیلی اصرار داره رو قضیه و اون رو مهم می‌دونه اولین کاری که می‌شه کرد اینه که مثلا بدیم یه نفر دومی هم نظرش رو بگه و براساس اون تصمیم بگیریم. ولی در هر صورت مهم اینه که در آینده کسی قرار نیست blame بشه. هر تصمیمی گرفته بشه، تصمیم کل تیم بوده و قرار نیست بگیم &ldquo;دیدی اشتباه می‌کردی&rdquo; یا &ldquo;دیدی درست می‌گفتم&rdquo;.</p></li>
+
+<li><p>بحث‌های عمیق و ادامه‌دار رو سعی کنید حضوری ببرید جلو</p></li>
+</ul>
+
+<h2 id="چطوری-فرهنگ-code-review-رو-تو-تیممون-جا-بندازیم">چطوری فرهنگ code review رو تو تیممون جا بندازیم؟</h2>
+
+<ul>
+<li>از خودتون شروع کنید (روی کدهای بقیه کامنت بذارید و کدهاتون به آدم‌های مختلف assign کنید)</li>
+<li>درباره‌ی ارزش code review با هم‌تیمی‌هاتون صحبت کنید</li>
+<li>سنیورها بیان جونیورها رو درگیر کنند و بهشون کد بدند review کنند و بهشون فاز مثبت بدن که ایول دمت گرم بابت نکته‌ای که گفتی و اینا
+<br><br>
+<center>
+<img src="/img/code_review/image1.jpg" alt="" />
+</center></li>
+</ul>
+
+<h2 id="منابعی-که-برای-نوشتن-این-مقاله-ازشون-استفاده-کردم">منابعی که برای نوشتن این مقاله ازشون استفاده کردم</h2>
+
+<p><a href="https://blog.labix.org/2013/02/06/ethics-for-code-reviewers">https://blog.labix.org/2013/02/06/ethics-for-code-reviewers</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=1m3eRFeCInY">https://www.youtube.com/watch?v=1m3eRFeCInY</a></p>
+
+<p><a href="http://marcotroisi.com/the-ethics-of-code-reviews/">http://marcotroisi.com/the-ethics-of-code-reviews/</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=PJjmw9TRB7s">https://www.youtube.com/watch?v=PJjmw9TRB7s</a></p>
+
+<p><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICSE202013-codereview.pdf">https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/ICSE202013-codereview.pdf</a></p>
+
+<p><a href="https://blog.fogcreek.com/cultivating-a-code-review-culture-interview-with-derek-prior/">https://blog.fogcreek.com/cultivating-a-code-review-culture-interview-with-derek-prior/</a></p>
+
+<p><a href="https://www.fastcodesign.com/3036748/why-its-so-hard-to-detect-emotion-in-emails-and-texts">https://www.fastcodesign.com/3036748/why-its-so-hard-to-detect-emotion-in-emails-and-texts</a></p>
+
+<p><a href="https://github.com/thoughtbot/guides/tree/master/code-review">https://github.com/thoughtbot/guides/tree/master/code-review</a> : این خیلی مختصر و مفید و خوبه</p>
+
+<p><a href="http://www.methodsandtools.com/archive/whycodereviews.php">http://www.methodsandtools.com/archive/whycodereviews.php</a></p>
+
+<p><a href="https://mtlynch.io/human-code-reviews-1">https://mtlynch.io/human-code-reviews-1</a></p>
+
+<p><a href="https://mtlynch.io/human-code-reviews-2/">https://mtlynch.io/human-code-reviews-2/</a></p>
+
+<p><a href="https://css-tricks.com/code-review-etiquette/">https://css-tricks.com/code-review-etiquette/</a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:-">کد ریویو فرایندی هستش که یک کد جدید، قبل از وارد شدن به کدبیس اصلی طی می‌کنه و در طی اون، به صورت دستی یا اتوماتیک بررسی می‌شه تا یک سری اتفاقات خوب بیفته که تو این مقاله راجع بهشون صحبت می‌کنیم. <a class="footnote-return" href="#fnref:-">↩</a></li>
+<li id="fn:https-en-wikiped"><a href="https://en.wikipedia.org/wiki/Software_testing">https://en.wikipedia.org/wiki/Software_testing</a> <a class="footnote-return" href="#fnref:https-en-wikiped">↩</a></li>
+<li id="fn:-">تعداد توسعه‌دهنده‌های یک تیم که اگر زیر اتوبوس برن تو پروژه اختلال جدی به وجود میاد <a class="footnote-return" href="#fnref:-">↩</a></li>
+<li id="fn:https-www-python"><a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a> <a class="footnote-return" href="#fnref:https-www-python">↩</a></li>
+<li id="fn:https-en-wikiped"><a href="https://en.wikipedia.org/wiki/Impostor_syndrome">https://en.wikipedia.org/wiki/Impostor_syndrome</a> <a class="footnote-return" href="#fnref:https-en-wikiped">↩</a></li>
+<li id="fn:https-www-fastco"><a href="https://www.fastcodesign.com/3036748/why-its-so-hard-to-detect-emotion-in-emails-and-texts">https://www.fastcodesign.com/3036748/why-its-so-hard-to-detect-emotion-in-emails-and-texts</a> <a class="footnote-return" href="#fnref:https-www-fastco">↩</a></li>
+<li id="fn:https-en-wikiped"><a href="https://en.wikipedia.org/wiki/Socratic_method">https://en.wikipedia.org/wiki/Socratic_method</a> <a class="footnote-return" href="#fnref:https-en-wikiped">↩</a></li>
+<li id="fn:https-techblog-w"><a href="https://techblog.workiva.com/tech-blog/mentors-code-review">https://techblog.workiva.com/tech-blog/mentors-code-review</a> <a class="footnote-return" href="#fnref:https-techblog-w">↩</a></li>
+</ol>
+</div>
+
+</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "az-sefr" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

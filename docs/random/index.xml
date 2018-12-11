@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Randoms on اپیوئید</title>
+    <link>blog/random/</link>
+    <description>Recent content in Randoms on اپیوئید</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Wed, 19 Jul 2017 21:25:09 +0430</lastBuildDate>
+    
+	<atom:link href="blog/random/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ویدیو‌های زنده ماندن در طبیعت</title>
+      <link>blog/random/survival_videos/</link>
+      <pubDate>Wed, 19 Jul 2017 21:25:09 +0430</pubDate>
+      
+      <guid>blog/random/survival_videos/</guid>
+      <description>یک ویژگی‌ی که زندگی مدرن داره اینه که به هیچ وجه، حتی تو شب هم نمی‌تونی سکوت رو تجربه کنی. من واقعا مدت‌هاست دنبال جایی‌م که سکوت محض داشته باشه و به زندگی‌م فکر کنم. آخرین بار که این اتفاق افتاد، رفته بودم غار بورنیک و اونجا داخل غار همگی سکوت کردیم و یه سکوت تقریبا ۹۰ درصدی بود که واقعا فوق‌العاده بود. همیشه دوست داشتم تو طبیعت کمپ بزنم و شب دور آتیش به زندگی‌م فکر کنم.</description>
+    </item>
+    
+  </channel>
+</rss>

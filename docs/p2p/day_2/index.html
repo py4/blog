@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+  <head>
+    <meta charset="utf-8">
+    <title>روز دوم - یک سیستم چت خیلی خیلی ساده | اپیوئید</title>
+    <link rel="stylesheet" href="/blog/css/style.css" />
+    <link rel="stylesheet" href="/blog/css/fonts.css" />
+    <meta property="og:title" content="روز دوم - یک سیستم چت خیلی خیلی ساده" />
+    <meta property="og:description" content="امروز دومین روز از این چالش که جزو پروژه‌ی ایکس من هستش بود. امروز اون کتابهرو تموم کردم. الان یه sense اولیه‌ای نسبت به Erlang گرفتم هر چند که چیزهای خیلی خیلی خیلی زیادی هست که هنوز نمی‌دونم. امروز سعی کردم بدون خوندن اون کد چت ی که داخل کتاب زده، یه chat system ساده بنویسم. تلاش جالبی بود. در درجه‌ی اول مشکلم با سینتکس بود که به شدت من رو کند کرده بود چرا که به سینتکس‌ش عادت نداشتم." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="روز دوم - یک سیستم چت خیلی خیلی ساده">
+    <meta name="twitter:description" content="امروز دومین روز از این چالش که جزو پروژه‌ی ایکس من هستش بود. امروز اون کتابهرو تموم کردم. الان یه sense اولیه‌ای نسبت به Erlang گرفتم هر چند که چیزهای خیلی خیلی خیلی زیادی هست که هنوز نمی‌دونم. امروز سعی کردم بدون خوندن اون کد چت ی که داخل کتاب زده، یه chat system ساده بنویسم. تلاش جالبی بود. در درجه‌ی اول مشکلم با سینتکس بود که به شدت من رو کند کرده بود چرا که به سینتکس‌ش عادت نداشتم.">
+
+    
+  </head>
+
+  <body>
+    <div class="top-bar">
+        <p class="title"> <b> اپیوئید </b> </p>
+        <p class="description"> در تلاش برای رهایی از این گرداب </p>
+    </div>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/blog/">خانه</a></li>
+      
+      <li><a href="/blog/post">وبلاگ</a></li>
+      
+      <li><a href="/blog/x-project">پروژه‌ی ایکس</a></li>
+      
+      <li><a href="/blog/book">کتاب‌ها</a></li>
+      
+      <li><a href="/blog/poem">اشعار</a></li>
+      
+      <li><a href="/blog/rooznevesht">روزنوشت</a></li>
+      
+      <li><a href="/blog/canada">مهاجرت به کانادا</a></li>
+      
+      <li><a href="/blog/random/">پراکنده</a></li>
+      
+      <li><a href="/blog/about/">درباره من</a></li>
+      
+      <li><a href="http://py4.ir">صفحه‌ی شخصی</a></li>
+      
+      <li><a href="/blog/index.xml">اشتراک</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">روز دوم - یک سیستم چت خیلی خیلی ساده</span></h1>
+
+<h2 class="date">  </h2>
+</div>
+
+<main>
+<p>امروز دومین روز از <a href="/blog/p2p">این چالش</a> که جزو <a href="/blog/x-project/">پروژه‌ی ایکس من</a> هستش بود. امروز <a href="http://erlang.org/download/getting_started-5.4.pdf">اون کتابه</a>رو تموم کردم. الان یه sense اولیه‌ای نسبت به Erlang گرفتم هر چند که چیزهای خیلی خیلی خیلی زیادی هست که هنوز نمی‌دونم. امروز سعی کردم بدون خوندن اون کد چت ی که داخل کتاب زده، یه chat system ساده بنویسم. تلاش جالبی بود. در درجه‌ی اول مشکلم با سینتکس بود که به شدت من رو کند کرده بود چرا که به سینتکس‌ش عادت نداشتم. این هم در شرایطی که می‌شه گفت من تقریبا هیچ‌وقت functional کد نزدم. در درجه‌ی بعدی مشکل این بود که تو ذهنم procedural فکر می‌کردم و موقع پیاده‌سازی‌ش تو زبان functional دچار مشکل می‌شدم. به خصوص اینکه هی فراموش می‌کردم برای اینکه یه جوری این مقدار رو به عنوان storage داشته باشیم (قبلا مثلا instance member یه کلاسی بود تو زبان‌های دیگه)، باید به عنوان آرگومان‌های تابع بیاریمش. مشکل بعدی این بود که هی موقع کد زدن داشتم فکر می‌کردم internal implementation این به چه شکلی هستش که الان مثلا این spawnش چطوری پیاده‌سازی شده و این‌ها. شاید بهتر باشه حالا که یه sense اولیه‌ای راجع به زبانش گرفتم، بشینم یه داکیومنت بخونم راجع به design principleهایی که داخل پیاده‌سازی erlang به کار رفته. چون الانش خیلی اذیتم که نمیدونم این کدی که دارم می‌زنم دقیقا به چه شکل داره پیاده‌سازی می‌شه.</p>
+
+<p>این فعلا اولین کدی هستش که نوشتم (فعلا فقط سعی کردم کار کنه و هیچ تمیزکاری و optimizationی رو در نظر نگرفتم):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-erlang" data-lang="erlang">-module(messaging).
+-export([start_server<span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>]).
+-export([login<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>]).
+-export([logout<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>]).
+-export([client<span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>]).
+-export([start_client<span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>]).
+-export([send_message<span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>]).
+
+<span style="color:#a6e22e">start_server</span>() -<span style="color:#960050;background-color:#1e0010">&gt; 
+</span><span style="color:#960050;background-color:#1e0010">    </span>register(messaging_server, <span style="color:#a6e22e">self</span>()),
+    <span style="color:#a6e22e">server</span>([]).
+
+<span style="color:#a6e22e">server_login</span>(From, Username, Clients) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>case lists:<span style="color:#a6e22e">keymember</span>(From, <span style="color:#ae81ff">1</span>, Clients) <span style="color:#66d9ef">of</span>
+        true -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            F</span>rom <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;Already logged in&#34;</span>},
+            Clients;
+        false -<span style="color:#960050;background-color:#1e0010">&gt; 
+</span><span style="color:#960050;background-color:#1e0010">            </span>case lists:<span style="color:#a6e22e">keymember</span>(Username, <span style="color:#ae81ff">2</span>, Clients) <span style="color:#66d9ef">of</span>
+                    true -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                        F</span>rom <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;Username already exists&#34;</span>},
+                        Clients;
+                    false -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                        F</span>rom <span style="color:#f92672">!</span> {logged_in},
+                        [{From, Username} | Clients]
+            <span style="color:#66d9ef">end</span>
+    <span style="color:#66d9ef">end</span>.
+    
+<span style="color:#a6e22e">server_logout</span>(From, Clients) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>case lists:<span style="color:#a6e22e">keyfind</span>(From, <span style="color:#ae81ff">1</span>, Clients) <span style="color:#66d9ef">of</span>
+        {From, Username} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            F</span>rom <span style="color:#f92672">!</span> {logged_out},
+            lists:<span style="color:#a6e22e">delete</span>({From, Username}, Clients);
+        false -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            F</span>rom <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;You are not logged in yet!&#34;</span>},
+            Clients
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">ensure_login</span>(From, Clients) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>case lists:<span style="color:#a6e22e">keyfind</span>(From, <span style="color:#ae81ff">1</span>, Clients) <span style="color:#66d9ef">of</span>
+        false -<span style="color:#960050;background-color:#1e0010">&gt; </span>false;
+        {From, Username} -<span style="color:#960050;background-color:#1e0010">&gt; U</span>sername
+    <span style="color:#66d9ef">end</span>.
+
+<span style="color:#a6e22e">server_send_message</span>(From_PID, To_Username, Message, Clients) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>case <span style="color:#a6e22e">ensure_login</span>(From_PID, Clients) <span style="color:#66d9ef">of</span>
+        false -<span style="color:#960050;background-color:#1e0010">&gt; F</span>rom_PID <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;You are not logged in!&#34;</span>};
+        From_Username -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>case lists:<span style="color:#a6e22e">keyfind</span>(To_Username, <span style="color:#ae81ff">2</span>, Clients) <span style="color:#66d9ef">of</span>
+                false -<span style="color:#960050;background-color:#1e0010">&gt; F</span>rom_PID <span style="color:#f92672">!</span> {error, <span style="color:#e6db74">&#34;Target user not found!&#34;</span>};
+                {To_PID, To_Username} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    T</span>o_PID <span style="color:#f92672">!</span> {message_received, From_Username, Message},
+                    From_PID <span style="color:#f92672">!</span> {message_sent}
+            <span style="color:#66d9ef">end</span>
+    <span style="color:#66d9ef">end</span>.
+                    
+
+<span style="color:#a6e22e">server</span>(Clients) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>receive
+        {login, From, Username} -<span style="color:#960050;background-color:#1e0010">&gt; 
+</span><span style="color:#960050;background-color:#1e0010">            </span>server(<span style="color:#a6e22e">server_login</span>(From, Username, Clients));
+        {logout, From} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>server(<span style="color:#a6e22e">server_logout</span>(From, Clients));
+        {send_message, From_PID, To_Username, Message} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>server_send_message(From_PID, To_Username, Message, Clients),
+            <span style="color:#a6e22e">server</span>(Clients)
+    <span style="color:#66d9ef">end</span>.
+
+
+<span style="color:#a6e22e">start_client</span>() -<span style="color:#960050;background-color:#1e0010">&gt; 
+</span><span style="color:#960050;background-color:#1e0010">    </span>spawn(messaging, client, []).
+
+<span style="color:#a6e22e">client</span>() -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    </span>receive
+        Message -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">            </span>io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;fuck</span><span style="color:#e6db74">~n</span><span style="color:#e6db74">&#34;</span>,[]),
+            <span style="color:#66d9ef">case</span> Message <span style="color:#66d9ef">of</span> 
+                {message_received, From, ChatMessage} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">~p</span><span style="color:#e6db74"> Sent you: </span><span style="color:#e6db74">~p~n</span><span style="color:#e6db74">&#34;</span>, [From, ChatMessage]);
+                {message_sent} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>ok;
+                {logged_in} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>ok;
+                {logged_out} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>ok;
+                {error, ErrorMessage} -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">                    </span>io:<span style="color:#a6e22e">fwrite</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">~p~n</span><span style="color:#e6db74">&#34;</span>, [ErrorMessage])
+            <span style="color:#66d9ef">end</span>,
+            <span style="color:#a6e22e">client</span>()
+    <span style="color:#66d9ef">end</span>.
+        
+
+<span style="color:#a6e22e">login</span>(Client, Username) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    {</span>messaging_server, &#39;server@localhost&#39;} <span style="color:#f92672">!</span> {login, Client, Username}.
+
+<span style="color:#a6e22e">logout</span>(Client) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    {</span>messaging_server, &#39;server@localhost&#39;} <span style="color:#f92672">!</span> {logout, Client}.
+
+<span style="color:#a6e22e">send_message</span>(Client, Username, Message) -<span style="color:#960050;background-color:#1e0010">&gt;
+</span><span style="color:#960050;background-color:#1e0010">    {</span>messaging_server, &#39;server@localhost&#39;} <span style="color:#f92672">!</span> {send_message, Client, Username, Message}.</code></pre></div>
+
+<p>یه مقدار چون راجع به internal قضیه‌ی concurrency ابهام داشتم، یه چیزایی سرچ کردم. به <a href="http://learnyousomeerlang.com/the-hitchhikers-guide-to-concurrency">این hitchhiker guide</a> رسیدم که چیز خوبی بود و ظاهرا یه کتاب کامله که می‌تونم انلاین بخونمش. بامزه توضیح داده بود. البته این رو روی گوشی پشت چراغ‌های قرمز تهران خوندم و باید فردا دقیق‌تر بخونمش.</p>
+
+<p>این‌ها برای امروز بود. برای فردا کاری که باید بکنم اینه که failure handling به قضیه اضافه کنم. بعد احتمالا یه تلاش بزنم که همین رو p2p ش کنم و دیگه پای یه سرور وسط نباشه فقط بحث node discovery میمونه که حالا باید فکر کنم چیکارش کنم. بعدش احتمالا احتیاج دارم یه کتاب کامل‌تر از Erlang بخونم که OTP اینا رو توضیح داده باشه (هر چند که الان چیز خاصی راجع به Erlang OTP نمی‌دونمش). ولی خب در درجه‌ی اول بعد از اون failure handling احتمالا بشینم همین کتاب یارو hitchhiker guideه رو بخونم.</p>
+
+</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "az-sefr" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

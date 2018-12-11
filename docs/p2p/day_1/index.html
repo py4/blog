@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+  <head>
+    <meta charset="utf-8">
+    <title>روز اول - کمی ارلنگ | اپیوئید</title>
+    <link rel="stylesheet" href="/blog/css/style.css" />
+    <link rel="stylesheet" href="/blog/css/fonts.css" />
+    <meta property="og:title" content="روز اول - کمی ارلنگ" />
+    <meta property="og:description" content="امروز اولین روز از این چالش بود. قرار بود چالش از اول اسفند شروع بشه منتها با توجه به اینکه‌ی بعد هفته از دوشنبه تا جمعه سفر هستم و دسترسی به اینترنت و لپتاپ ندارم، تصمیم گرفتم زودتر شروع کنم. کاری که امروز کردم جدا از آماده‌سازی وبلاگ و این‌ها، این بود که یه کتاب Erlang شروع کردم بخونم که یه senseی از Erlang بگیرم. چون هیچ چیزی از Erlang نمیدونستم." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="روز اول - کمی ارلنگ">
+    <meta name="twitter:description" content="امروز اولین روز از این چالش بود. قرار بود چالش از اول اسفند شروع بشه منتها با توجه به اینکه‌ی بعد هفته از دوشنبه تا جمعه سفر هستم و دسترسی به اینترنت و لپتاپ ندارم، تصمیم گرفتم زودتر شروع کنم. کاری که امروز کردم جدا از آماده‌سازی وبلاگ و این‌ها، این بود که یه کتاب Erlang شروع کردم بخونم که یه senseی از Erlang بگیرم. چون هیچ چیزی از Erlang نمیدونستم.">
+
+    
+  </head>
+
+  <body>
+    <div class="top-bar">
+        <p class="title"> <b> اپیوئید </b> </p>
+        <p class="description"> در تلاش برای رهایی از این گرداب </p>
+    </div>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/blog/">خانه</a></li>
+      
+      <li><a href="/blog/post">وبلاگ</a></li>
+      
+      <li><a href="/blog/x-project">پروژه‌ی ایکس</a></li>
+      
+      <li><a href="/blog/book">کتاب‌ها</a></li>
+      
+      <li><a href="/blog/poem">اشعار</a></li>
+      
+      <li><a href="/blog/rooznevesht">روزنوشت</a></li>
+      
+      <li><a href="/blog/canada">مهاجرت به کانادا</a></li>
+      
+      <li><a href="/blog/random/">پراکنده</a></li>
+      
+      <li><a href="/blog/about/">درباره من</a></li>
+      
+      <li><a href="http://py4.ir">صفحه‌ی شخصی</a></li>
+      
+      <li><a href="/blog/index.xml">اشتراک</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">روز اول - کمی ارلنگ</span></h1>
+
+<h2 class="date">  </h2>
+</div>
+
+<main>
+<p>امروز اولین روز از این چالش بود. قرار بود چالش از اول اسفند شروع بشه منتها با توجه به اینکه‌ی بعد هفته از دوشنبه تا جمعه سفر هستم و دسترسی به اینترنت و لپتاپ ندارم، تصمیم گرفتم زودتر شروع کنم. کاری که امروز کردم جدا از آماده‌سازی وبلاگ و این‌ها، این بود که <a href="http://erlang.org/download/getting_started-5.4.pdf">یه کتاب Erlang</a> شروع کردم بخونم که یه senseی از Erlang بگیرم. چون هیچ چیزی از Erlang نمیدونستم. من تو کارهام هیچ وقت سمت زبان‌های برنامه‌نویسی functional نرفته بودم منتها داخل درس &ldquo;طراحی زبان‌های برنامه‌نویسی&rdquo; یه سری چیزا راجع بهشون خونده بودم و یه شهودی راجع بهشون داشتم. چند خط هم تمرینی Lisp نوشته بودم قبلا. با خوندن کتاب ه یه سری مفاهیم functional programming برام مرور شد. بعد از خوندن بخش‌های ابتدایی کتاب، قسمت message passing رو خوندم که راجع به ارتباط بین processهای تو Erlang صحبت کرده بود. نکته‌ی جالبی که داشت abstractionی بود که تعریف می‌کرد. اون processی که می‌خواستی باهاش حرف بزنی اصلا مهم نبود داخل همون ماشین هست یا یه ماشین دیگه. در هر صورت تو با یک pid صحبت می‌کردی. یک چیز دیگه‌ش که خیلی جالب بود برام و باعث شد یه شهودی بگیرم که چرا Erlang برای این تیپ برنامه‌های تحت شبکه خوب هستش، این بود که message passingش با استفاده از constructهای خود زبان ارلنگ صورت می‌گرفت! به عبارتی برای صحبت کردن با یک برنامه‌ی ارلنگ ریموت، لازم نبود مثلا سوکت باز کنی و یه پروتکل برای خودت تعریف کنی و بگی مثلا برای اجرای فلان دستور فلان دیتا رو داخل سوکت می‌نویسم. پروتکل صحبت کردن ت می‌تونه یه tuple ارلنگ باشه که مثلا دستور مورد نظر به صورت یه atom نوشته شده و ارسال می‌شه برای برنامه‌ی ارلنگ ریموت. به عنوان todo باید برم بخونم که این messge passing ارلنگ چطوری پیاده‌سازی شده. خلاصه‌ش رو بخوام بگم، به صورت out-of-the-box شما یک remote communication راحت دارید!</p>
+
+<p>حالا فعلا این‌ها اولین چیزهایی بود که از ارلنگ یاد گرفتم. احتمالا جلوتر شهود خیلی بهتری پیدا می‌کنم. فردا باید بشینم اون کتاب ه رو تموم کنم و بعدش بشینم یه مقدار راجع به پروتکل‌های p2p بخونم. یه مروری روی جزئیات تورنت احتمالا به دردم بخوره.</p>
+
+</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "az-sefr" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

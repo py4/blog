@@ -4,6 +4,7 @@ title = "اپیوئید"
 theme = "hugo-xmin"
 footnotereturnlinkcontents = "↩"
 disqusShortname = "az-sefr"
+publishDir = "docs"
 
 [[menu.main]]
     name = "خانه"

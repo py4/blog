@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>درباره من on اپیوئید</title>
+    <link>blog/about/</link>
+    <description>Recent content in درباره من on اپیوئید</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Sun, 09 Jul 2017 22:54:31 +0430</lastBuildDate>
+    
+	<atom:link href="blog/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

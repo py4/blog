@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Books on اپیوئید</title>
-    <link>blog/book/</link>
+    <link>https://py4.github.io/blog/book/</link>
     <description>Recent content in Books on اپیوئید</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
     <lastBuildDate>Thu, 19 Apr 2018 02:35:55 +0430</lastBuildDate>
     
-	<atom:link href="blog/book/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://py4.github.io/blog/book/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>سیذارتا اثر هرمان هسه</title>
-      <link>blog/book/siddhartha/</link>
+      <link>https://py4.github.io/blog/book/siddhartha/</link>
       <pubDate>Thu, 19 Apr 2018 02:35:55 +0430</pubDate>
       
-      <guid>blog/book/siddhartha/</guid>
+      <guid>https://py4.github.io/blog/book/siddhartha/</guid>
       <description>اخیرا کتاب سیذارتا اثر هرمان هسه رو خوندم که لذت بردم ازش و نتیجتا تصمیم گرفتم اینجا مختصری راجع بهش بنویسم1. من ترجمه‌ی پرویز داریوش رو خوندم که از مترجم‌های خیلی قدیمی هستش 2 و نتیجتا نثر کتاب یه مقدار قدیمی بود ولی خب زود بهش عادت کردم و در ادامه باهاش ارتباط برقرار کردم.
 درباره‌ی هرمان هسه بخوام یک مقدار بگم، هرمان هسه نویسنده‌ی آلمانی-سوییسی هستش که سال ۱۹۶۲ در ۸۵ سالگی از دنیا می‌ره.</description>
     </item>

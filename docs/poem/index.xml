@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Poems on اپیوئید</title>
-    <link>blog/poem/</link>
+    <link>https://py4.github.io/blog/poem/</link>
     <description>Recent content in Poems on اپیوئید</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
     <lastBuildDate>Mon, 02 Apr 2018 20:28:51 +0430</lastBuildDate>
     
-	<atom:link href="blog/poem/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://py4.github.io/blog/poem/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>بدون رنگ، بدون طعم</title>
-      <link>blog/poem/tasteless/</link>
+      <link>https://py4.github.io/blog/poem/tasteless/</link>
       <pubDate>Mon, 02 Apr 2018 20:28:51 +0430</pubDate>
       
-      <guid>blog/poem/tasteless/</guid>
+      <guid>https://py4.github.io/blog/poem/tasteless/</guid>
       <description>زندگی یک فیلم شد،
 &amp;nbsp;&amp;nbsp;“لحظات” معنا باخت،
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; همه چیز تکراری‌ست.
@@ -37,10 +37,10 @@
     
     <item>
       <title>روایت یک مرگ</title>
-      <link>blog/poem/death/</link>
+      <link>https://py4.github.io/blog/poem/death/</link>
       <pubDate>Sat, 31 Mar 2018 21:25:09 +0430</pubDate>
       
-      <guid>blog/poem/death/</guid>
+      <guid>https://py4.github.io/blog/poem/death/</guid>
       <description>و ما،
 &amp;nbsp;در بهار عاشق شدیم
 &amp;nbsp; &amp;nbsp;در تابستان بوسه زدیم
@@ -67,10 +67,10 @@
     
     <item>
       <title>ساحل....</title>
-      <link>blog/poem/seashore/</link>
+      <link>https://py4.github.io/blog/poem/seashore/</link>
       <pubDate>Sat, 24 Mar 2018 21:25:09 +0430</pubDate>
       
-      <guid>blog/poem/seashore/</guid>
+      <guid>https://py4.github.io/blog/poem/seashore/</guid>
       <description>طفلی بودم
 &amp;nbsp;&amp;nbsp; برّ دریا
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; چون نقاشی که دیشب خواب ساحل کرده بود و خوابش رو تصویر می‌کرد

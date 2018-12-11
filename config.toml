@@ -1,4 +1,4 @@
-baseURL = "blog"
+baseURL = "https://py4.github.io/blog/"
 languageCode = "fa-ir"
 title = "اپیوئید"
 theme = "hugo-xmin"

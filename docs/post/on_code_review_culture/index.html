@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>درباره‌ی فرهنگ Code Review | اپیوئید</title>
-    <link rel="stylesheet" href="/blog/css/style.css" />
-    <link rel="stylesheet" href="/blog/css/fonts.css" />
+    <link rel="stylesheet" href="https://py4.github.io/blog/css/style.css" />
+    <link rel="stylesheet" href="https://py4.github.io/blog/css/fonts.css" />
     <meta property="og:title" content="درباره‌ی فرهنگ Code Review" />
     <meta property="og:description" content="در تیم‌های مختلف فنی‌ی که کار کردم، کد ریویو 1 به شیوه‌های متفاوت و فرهنگ‌های مختلفی انجام می‌شده. چندین ماه پیش این فکر تو ذهنم بود که یک مقدار بیشتر راجع به کد ریویو مطالعه کنم و ببینم در دنیا به چه شکلی انجام می‌شه و practiceهای خوبش چیان که حاصلش شد این مطلبی که دارم می‌نویسم که بیشتر خلاصه‌ی یک سری منابع هست که در انتها بهشون لینک دادم." />
     <meta name="twitter:card" content="summary">
@@ -22,27 +22,27 @@
     <nav>
     <ul class="menu">
       
-      <li><a href="https://py4.github.io/blog/">خانه</a></li>
+      <li><a href="https://py4.github.io/">خانه</a></li>
       
-      <li><a href="https://py4.github.io/blog/post">وبلاگ</a></li>
+      <li><a href="https://py4.github.io/post">وبلاگ</a></li>
       
-      <li><a href="https://py4.github.io/blog/x-project">پروژه‌ی ایکس</a></li>
+      <li><a href="https://py4.github.io/x-project">پروژه‌ی ایکس</a></li>
       
-      <li><a href="https://py4.github.io/blog/book">کتاب‌ها</a></li>
+      <li><a href="https://py4.github.io/book">کتاب‌ها</a></li>
       
-      <li><a href="https://py4.github.io/blog/poem">اشعار</a></li>
+      <li><a href="https://py4.github.io/poem">اشعار</a></li>
       
-      <li><a href="https://py4.github.io/blog/rooznevesht">روزنوشت</a></li>
+      <li><a href="https://py4.github.io/rooznevesht">روزنوشت</a></li>
       
-      <li><a href="https://py4.github.io/blog/canada">مهاجرت به کانادا</a></li>
+      <li><a href="https://py4.github.io/canada">مهاجرت به کانادا</a></li>
       
-      <li><a href="https://py4.github.io/blog/random/">پراکنده</a></li>
+      <li><a href="https://py4.github.io/random/">پراکنده</a></li>
       
-      <li><a href="https://py4.github.io/blog/about/">درباره من</a></li>
+      <li><a href="https://py4.github.io/about/">درباره من</a></li>
       
       <li><a href="http://py4.ir">صفحه‌ی شخصی</a></li>
       
-      <li><a href="https://py4.github.io/blog/index.xml">اشتراک</a></li>
+      <li><a href="https://py4.github.io/index.xml">اشتراک</a></li>
       
     </ul>
     <hr/>
@@ -67,7 +67,7 @@
 نه ! پیدا کردن باگ رو باید با QA و انواع مختلف روش‌های مختلف testing <sup class="footnote-ref" id="fnref:https-en-wikiped"><a href="#fn:https-en-wikiped">2</a></sup>
 حل کنید. البته کد ریویو به خودی خود باعث می‌شه که باگ‌ها کمتر بشن ولی هدفش این نیست. در فرهنگ کد ریویو مدرن، هدف اصلی چیز دیگه‌ای هستش. یک تیمی از مایکروسافت شروع به یه تحقیق کردن و از تیم‌ها و شرکت‌های مختلف مزایای کد ریویو رو می‌پرسیدن. طبق انتظار، اکثریت، &ldquo;پیدا کردن باگ&rdquo; رو به عنوان مزیت اصلی کد ریویو مطرح کرده بودن منتها بررسی‌هایی که روی code reviewهاشون انجام شد، چیز دیگه‌ای رو نشون می‌داد. مزایایی که در عمل تیم‌ها ازش بهره‌مند شدن و تو ذهنشون bold شده بود، <strong>انتقال دانش، افزایش آگاهی تیمی، و پیدا کردن راه حل‌های جایگزین/بهتر</strong> بود !
 <center>
-<img src="/img/code_review/image7.jpg" alt="" />
+<img src="https://py4.github.io/blog/img/code_review/image7.jpg" alt="" />
 </center>
 کد ریویو فرصتی هستش که آدم‌ها دانش‌ و طرز نگاه‌شون رو با هم به اشتراک بگذارن، <strong>از هم یاد بگیرن</strong> و <strong>با هم دیگه پیشرفت کنند</strong>. همچنین، کد ریویو باعث افزایش آگاهی تیمی می‌شه از این نظر که همه مقدار خوبی نسبت به codebase آپدیت می‌مونند و این کار رو در آینده خیلی راحت می‌کنه برای تغییرات. این مساله ارتباط مستقیم داره با bus factor
 <sup class="footnote-ref" id="fnref:-"><a href="#fn:-">3</a></sup>. علاوه بر این، باعث می‌شه که راه‌حل جدید یا بهتر برای یه مساله پیدا بشه. مثلا شاید یک نفر بتونه پیشنهاد بده که چطوری می‌شه یک چیزی رو ساده‌تر انجام داد که خب بهتره.</p>
@@ -111,7 +111,7 @@
 <p>مهم‌ترین نکته‌ای که تو review کردن کد باید حواسمون باشه اینه که ما <strong>همه انسان هستیم</strong> و هممون تا حدی دارای  <strong>Imposter Syndrome</strong>
 <sup class="footnote-ref" id="fnref:https-en-wikiped"><a href="#fn:https-en-wikiped">5</a></sup> هستیم. نتیجه‌ش این می‌شه که ناخودآگاه، وقتی ایرادی به کدی که زدیم گرفته می‌شه، اون رو به خودمون می‌گیریم و ناراحت می‌شیم یا گارد می‌گیریم. در این رابطه جلوتر صحبت می‌کنیم.
 <center>
-<img src="/img/code_review/image3.png" alt="" />
+<img src="https://py4.github.io/blog/img/code_review/image3.png" alt="" />
 </center>
 ولی نتیجتا به عنوان reviewer باید در نظر بگیریم اینه که در محیط نوشتاری، لحن و منظور به خوبی منتقل نمی‌شه و تحقیقات نشون داده<sup class="footnote-ref" id="fnref:https-www-fastco"><a href="#fn:https-www-fastco">6</a></sup> که یه negative bias در تعامل نوشتاری نسبت به تعامل چهره به چهره یا گفتاری وجود داره. پس باید قبل از هر چیزی این نکته رو در نظر بگیریم که چطوری به شکل مناسبی یه پیشنهادی رو مطرح کنیم به نویسنده‌ی کد.
 <br><br>
@@ -122,7 +122,7 @@
 </ul>
 
 <p><center>
-<img src="/img/code_review/image6.jpg" alt="" />
+<img src="https://py4.github.io/blog/img/code_review/image6.jpg" alt="" />
 </center>
 این پرسشی مطرح کردن، به جز اون بحث گارد گرفتن به یه چیز دیگه هم کمک می‌کنه. اینکه آدم‌های تازه‌واردتر به تیم، بتونند راحت‌تر به اعضای seniorتر فیدبک بدن. ممکنه خیلی از اعضای جدید سختشون باشه به یک senior بگن فلان کار رو بکن و این پرسشی مطرح کردن این کار رو راحت می‌کنه براشون.
 <br><br>
@@ -139,7 +139,7 @@
 
 <li><p><strong>مثبت باشیم و از هم تشکر کنیم</strong>
 <center>
-<img src="/img/code_review/image4.png" alt="" />
+<img src="https://py4.github.io/blog/img/code_review/image4.png" alt="" />
 </center></p></li>
 </ul>
 
@@ -152,7 +152,7 @@
 
 <li><p><strong>یاد دادن به بقیه</strong>: موقعی که merge request می‌زنید سعی کنید دلایل تغییراتتون رو به صورت مشروح بنویسید (و چیزی رو برای بقیه بدیهی فرض نکنید) یادتون باشه که یکی از مهم‌ترین اهداف این پروسه اینه که به هم یاد بدیم و از هم یاد بگیریم.
 <center>
-<img src="/img/code_review/image5.png" alt="" />
+<img src="https://py4.github.io/blog/img/code_review/image5.png" alt="" />
 </center></p></li>
 </ul>
 
@@ -180,7 +180,7 @@
 <li>سنیورها بیان جونیورها رو درگیر کنند و بهشون کد بدند review کنند و بهشون فاز مثبت بدن که ایول دمت گرم بابت نکته‌ای که گفتی و اینا
 <br><br>
 <center>
-<img src="/img/code_review/image1.jpg" alt="" />
+<img src="https://py4.github.io/blog/img/code_review/image1.jpg" alt="" />
 </center></li>
 </ul>
 

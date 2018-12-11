@@ -1,10 +1,12 @@
 baseURL = "https://py4.github.io/blog/"
+#baseURL = "/"
 languageCode = "fa-ir"
 title = "اپیوئید"
 theme = "hugo-xmin"
 footnotereturnlinkcontents = "↩"
 disqusShortname = "az-sefr"
 publishDir = "docs"
+canonifyurls = true
 
 [[menu.main]]
     name = "خانه"

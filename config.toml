@@ -15,42 +15,42 @@ canonifyurls = true
 
 [[menu.main]]
     name = "وبلاگ"
-    url = "/post"
+    url = "post"
     weight = 1
 
 [[menu.main]]
     name = "پروژه‌ی ایکس"
-    url = "/x-project"
+    url = "x-project"
     weight=1.5
 
 [[menu.main]]
     name = "کتاب‌ها"
-    url = "/book"
+    url = "book"
     weight=1.5
 
 [[menu.main]]
     name = "مهاجرت به کانادا"
-    url = "/canada"
+    url = "canada"
     weight=2
 
 [[menu.main]]
     name = "اشعار"
-    url = "/poem"
+    url = "poem"
     weight=2
 
 [[menu.main]]
     name = "روزنوشت"
-    url = "/rooznevesht"
+    url = "rooznevesht"
     weight = 2
 
 [[menu.main]]
     name = "پراکنده"
-    url = "/random/"
+    url = "random/"
     weight = 3
 
 [[menu.main]]
     name = "درباره من"
-    url = "/about/"
+    url = "about/"
     weight = 4
 
 [[menu.main]]
@@ -60,7 +60,7 @@ canonifyurls = true
 
 [[menu.main]]
     name = "اشتراک"
-    url = "/index.xml"
+    url = "index.xml"
 
 [Params]
 description = "در تلاش برای رهایی از این گرداب"

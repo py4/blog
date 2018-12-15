@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on اپیوئید</title>
-    <link>https://py4.github.io/blog/post/</link>
+    <link>http://py4.ir/blog/post/</link>
     <description>Recent content in Posts on اپیوئید</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
     <lastBuildDate>Thu, 28 Jun 2018 16:48:22 +0430</lastBuildDate>
     
-	<atom:link href="https://py4.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://py4.ir/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>درس‌هایی که من از دوران لیسانس گرفتم</title>
-      <link>https://py4.github.io/blog/post/on_after_entrance_exam/</link>
+      <link>http://py4.ir/blog/post/on_after_entrance_exam/</link>
       <pubDate>Thu, 28 Jun 2018 16:48:22 +0430</pubDate>
       
-      <guid>https://py4.github.io/blog/post/on_after_entrance_exam/</guid>
+      <guid>http://py4.ir/blog/post/on_after_entrance_exam/</guid>
       <description>مقدمه من تابستون پارسال، بعد از ۴ سال تحصیل در رشته‌ی مهندسی‌ نرم‌افزار دانشگاه تهران، از دانشگاه فارغ‌التحصیل شدم. الان که به این ۴ ۵ سال نگاه می‌کنم، به وضوح می‌بینم که درس‌هایی گرفتم که ترم یک دانشگاه برام بدیهی نبود. یه مقدار دوست داشتم راجع به این چیزهایی که مشاهده کردم و تجربه کردم بنویسم. دقت کنید که من اینجا دارم تجربه‌ی شخصی خودم رو می‌نویسم و به هیچ وجه نمی‌خوام برای کسی نسخه بپیچم یا همه رو به یک چیز راهنمایی بدم.</description>
     </item>
     
     <item>
       <title>درباره‌ی فرهنگ Code Review</title>
-      <link>https://py4.github.io/blog/post/on_code_review_culture/</link>
+      <link>http://py4.ir/blog/post/on_code_review_culture/</link>
       <pubDate>Sun, 01 Apr 2018 16:48:22 +0430</pubDate>
       
-      <guid>https://py4.github.io/blog/post/on_code_review_culture/</guid>
+      <guid>http://py4.ir/blog/post/on_code_review_culture/</guid>
       <description>در تیم‌های مختلف فنی‌ی که کار کردم، کد ریویو 1 به شیوه‌های متفاوت و فرهنگ‌های مختلفی انجام می‌شده. چندین ماه پیش این فکر تو ذهنم بود که یک مقدار بیشتر راجع به کد ریویو مطالعه کنم و ببینم در دنیا به چه شکلی انجام می‌شه و practiceهای خوبش چیان که حاصلش شد این مطلبی که دارم می‌نویسم که بیشتر خلاصه‌ی یک سری منابع هست که در انتها بهشون لینک دادم.</description>
     </item>
     
     <item>
       <title>تا الان داشتیم اشتباه مسواک می‌زدیم</title>
-      <link>https://py4.github.io/blog/post/were_doing_it_wrong/</link>
+      <link>http://py4.ir/blog/post/were_doing_it_wrong/</link>
       <pubDate>Thu, 20 Jul 2017 08:26:19 +0430</pubDate>
       
-      <guid>https://py4.github.io/blog/post/were_doing_it_wrong/</guid>
+      <guid>http://py4.ir/blog/post/were_doing_it_wrong/</guid>
       <description>اگر مثل من از بچگی مشکلات دندانی داشتید 1 ، احتمالا این چیزی که می‌خوام بگم خیلی به دردتون می‌خوره.
 برای من همیشه سوال بود که چرا با وجود اینکه مسواک می‌زنم، ولی باز دندون‌هام مشکل پیدا می‌کنند و تصمیم گرفتم برم علمی و دقیق دربیارم که قضیه چیه و به این رسیدم که چگونگی و زمان مسواک زدن خیلی خیلی موثر هست.
 اولین سوال اینه که اصلا پوسیدگی دندانی چطوری اتفاق میفته؟</description>
@@ -42,10 +42,10 @@
     
     <item>
       <title>خوشحالی الگوریتمی نیستش</title>
-      <link>https://py4.github.io/blog/post/happiness-is-not-algorithmic/</link>
+      <link>http://py4.ir/blog/post/happiness-is-not-algorithmic/</link>
       <pubDate>Mon, 10 Jul 2017 01:37:12 +0430</pubDate>
       
-      <guid>https://py4.github.io/blog/post/happiness-is-not-algorithmic/</guid>
+      <guid>http://py4.ir/blog/post/happiness-is-not-algorithmic/</guid>
       <description>چندین ماه پیش، در عین همه‌ی اون افسردگی‌ها و حالات منفی، از یک دختری خوشم اومد. ویژگی‌ش خب این بود که تو فاکتورهایی که برای من مهم هست، از همه‌ی دخترهایی که باهاشون آشنا شده بودم بهتر بود. با روان‌شناسم که صحبت می‌کردم راجع به اتفاقات طول هفته، این موضوع هم بهش گفتم و گفتم: من مطمئنم با این دختره دوست شم کلا زندگی‌م دگرگون می‌شه و حالم خوب می‌شه و خوشحال می‌شم و &amp;hellip;.</description>
     </item>
     

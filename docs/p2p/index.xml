@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>پیام‌رسان peer-to-peer on اپیوئید</title>
-    <link>https://py4.github.io/blog/p2p/</link>
+    <link>http://py4.ir/blog/p2p/</link>
     <description>Recent content in پیام‌رسان peer-to-peer on اپیوئید</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
     
-	<atom:link href="https://py4.github.io/blog/p2p/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://py4.ir/blog/p2p/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>روز اول - کمی ارلنگ</title>
-      <link>https://py4.github.io/blog/p2p/day_1/</link>
+      <link>http://py4.ir/blog/p2p/day_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://py4.github.io/blog/p2p/day_1/</guid>
+      <guid>http://py4.ir/blog/p2p/day_1/</guid>
       <description>امروز اولین روز از این چالش بود. قرار بود چالش از اول اسفند شروع بشه منتها با توجه به اینکه‌ی بعد هفته از دوشنبه تا جمعه سفر هستم و دسترسی به اینترنت و لپتاپ ندارم، تصمیم گرفتم زودتر شروع کنم. کاری که امروز کردم جدا از آماده‌سازی وبلاگ و این‌ها، این بود که یه کتاب Erlang شروع کردم بخونم که یه senseی از Erlang بگیرم. چون هیچ چیزی از Erlang نمیدونستم.</description>
     </item>
     
     <item>
       <title>روز دوم - یک سیستم چت خیلی خیلی ساده</title>
-      <link>https://py4.github.io/blog/p2p/day_2/</link>
+      <link>http://py4.ir/blog/p2p/day_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://py4.github.io/blog/p2p/day_2/</guid>
+      <guid>http://py4.ir/blog/p2p/day_2/</guid>
       <description>امروز دومین روز از این چالش که جزو پروژه‌ی ایکس من هستش بود. امروز اون کتابهرو تموم کردم. الان یه sense اولیه‌ای نسبت به Erlang گرفتم هر چند که چیزهای خیلی خیلی خیلی زیادی هست که هنوز نمی‌دونم. امروز سعی کردم بدون خوندن اون کد چت ی که داخل کتاب زده، یه chat system ساده بنویسم. تلاش جالبی بود. در درجه‌ی اول مشکلم با سینتکس بود که به شدت من رو کند کرده بود چرا که به سینتکس‌ش عادت نداشتم.</description>
     </item>
     
     <item>
       <title>روز سوم : افزایش سرعت کد زدن در ارلنگ</title>
-      <link>https://py4.github.io/blog/p2p/day_3/</link>
+      <link>http://py4.ir/blog/p2p/day_3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://py4.github.io/blog/p2p/day_3/</guid>
+      <guid>http://py4.ir/blog/p2p/day_3/</guid>
       <description>امروز سومین روز من در چالش اسفند ماه بود. در پروژه‌ی ایکسی که برای خودم تعریف کردم، من هر ماه یک چلنجی رو برای خودم انتخاب می‌کنم.
 خب امروز تازه ساعت ۱۲ شب کار کردن روی پروژه رو شروع کردم و الان که دارم این پست رو می‌نویسم ساعت ۵ صبح هستش! در ابتدا نشستم یه مقدار از این کتاب Learn You Some Erlang رو خوندم. خیلی بامزه و خوب توضیح داده و از روی یک کتاب Haskell اسکی رفته سبک نوشتن‌ش رو.</description>
     </item>
     
     <item>
       <title>روز چهارم - بیشتر مطالعه</title>
-      <link>https://py4.github.io/blog/p2p/day_4/</link>
+      <link>http://py4.ir/blog/p2p/day_4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://py4.github.io/blog/p2p/day_4/</guid>
+      <guid>http://py4.ir/blog/p2p/day_4/</guid>
       <description>امروز چهارمین روز از این چالش که جزو پروژه‌ی ایکس من هستش بود.
 کاری که امروز که کردم این بود که از اون کتاب Learn You Some Erlang بخش OTPش 1 رو بخونم. خیلی درگیر جزئیات نشدم و بیشتر سعی کردم بفهمم OTP چه قابلیت‌هایی داره که این اتفاق افتاد. ولی هنوز بلد نیستم با OTP کد بزنم که احتمالا دوباره مراجعه کنم به خود کتاب اوکی بشه. یک سری نکات کنکوری هم یاد گرفتم، مثل اینکه برای پیام‌های بین پروسه‌های ارلنگ، یک Reference بذارم که وقتی یک چیزی Receive شد، معلوم باشه جواب چه درخواست اولیه‌ای بوده.</description>
     </item>

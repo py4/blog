@@ -10,7 +10,7 @@ canonifyurls = true
 
 [[menu.main]]
     name = "خانه"
-    url = "/"
+    url = "/blog"
     weight = 1
 
 [[menu.main]]

@@ -54,9 +54,15 @@ canonifyurls = true
     weight = 4
 
 [[menu.main]]
+    name = "حمایت"
+    url = "donate"
+    weight = 5
+
+
+[[menu.main]]
     name = "صفحه‌ی شخصی"
     url = "http://py4.ir"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     name = "اشتراک"

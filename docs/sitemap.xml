@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://py4.ir/blog/post/on_internship/</loc>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://py4.ir/blog/post/on_attending_conferences/</loc>
     <lastmod>2019-12-17T01:48:22+00:00</lastmod>
   </url>
@@ -111,7 +116,7 @@
   
   <url>
     <loc>http://py4.ir/blog/post/</loc>
-    <lastmod>2019-12-17T01:48:22+00:00</lastmod>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -134,7 +139,7 @@
   
   <url>
     <loc>http://py4.ir/blog/</loc>
-    <lastmod>2019-12-17T01:48:22+00:00</lastmod>
+    <lastmod>2020-08-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

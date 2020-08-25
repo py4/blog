@@ -64,6 +64,8 @@ a {
   color: blue;
 }
 
-img.emblem {
-    margin: 1em;
+div.emblems {
+    display: flex;
+    column-gap: 0.4em;
+    justify-content: space-between;
 }

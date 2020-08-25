@@ -63,3 +63,7 @@ tr:nth-child(even) { background: #eee }
 a {
   color: blue;
 }
+
+img.emblem {
+    margin: 1em;
+}

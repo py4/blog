@@ -1,7 +1,7 @@
 baseURL = "http://py4.ir/blog/"
 #baseURL = "/"
 languageCode = "fa-ir"
-title = "اپیوئید"
+title = "اُپیوئید | Opioid"
 theme = "hugo-xmin"
 footnotereturnlinkcontents = "↩"
 disqusShortname = "az-sefr"
